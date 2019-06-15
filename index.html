@@ -9,18 +9,18 @@
 </head>
 <body>
     <div class="header">
-        <h1 id="header">Free cash flow calculator</h1>
+        <h1 id="header">Discount cash flow calculator</h1>
     </div>
     <div class="container">
         <div class="inputFields">
             <h1>Free cash Flow (5 year average)</h1>
-            <input type="text">
+            <input type="text" id="cashFlow" value="100">
             <h1>Cash flow growth rate</h1>
             <input type="text">
             <h1>What do you consider short term (most common is 10 years)?</h1>
-            <input type="text">
+            <input type="text" id="shortTerm" value="10">
             <h1>Discount rate(10%)</h1>
-            <input type="text">
+            <input type="text" id="discountRate" value='10'>
             <h1>After 10 year perpetuity growth rate (max 3%)</h1>
             <input type="text">
             <h1>Shares outstanding</h1>
@@ -29,9 +29,11 @@
             <input type="text">
         </div>
         <div class="output">
+            <button id="calculate" onclick="refresh()"> Calculate</button>
             <h1>Intrinsic value</h1>
             <h1 id="intrinsicVal"></h1>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
