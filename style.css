@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(235, 240, 234);
+}
+
+/* Header */
+#header{
+    text-align: center;
+}
+
+/* Container */
+.container{
+    margin: auto;
+    margin-top: 60px;
+    width: 700px;
+}
+
+.container h1{
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* inputfields */
+.inputFields{
+    width: 200px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(219, 197, 197);
+}
+
+/* Output */
+.output{
+    margin: auto;
+    width: 200px;
+}
+
+.output h1{
+    font-size: 25px;
+
+}
