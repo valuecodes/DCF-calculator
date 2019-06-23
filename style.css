@@ -7,10 +7,16 @@ body{
     text-align: center;
 }
 
+.header h2{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
 /* Container */
 .container{
     margin: auto;
-    margin-top: 60px;
+    margin-top: 20px;
     width: 700px;
 }
 
@@ -30,10 +36,46 @@ body{
 /* Output */
 .output{
     margin: auto;
-    width: 200px;
+    width: 100%;
+    text-align: center;
 }
 
 .output h1{
     font-size: 25px;
+}
 
+
+/* Table */
+#table{
+    height: 100px;
+    background-color: azure;
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+#table p{
+    padding: 0px;
+    margin: 0px;
+    height: 23px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/* Data */
+.data{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    height: 25px;
+}
+
+.block{
+    border: 1px solid black;
+    height: 23px;
+}
+
+.blockSum{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 30px;
+    width: 40px;
 }
