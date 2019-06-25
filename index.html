@@ -25,9 +25,9 @@
             <h1>After 10 year perpetuity growth rate (max 3%)</h1>
             <input type="text" id="perpetuity" value='3'>
             <h1>Shares outstanding</h1>
-            <input type="text">
+            <input type="text" id="shareCount" value="4.74">
             <h1>Stock price</h1>
-            <input type="text">
+            <input type="text" id="stockPrice" value="197.94">
         </div>
         <div class="output">
             <button id="calculate" onclick="refresh()"> Calculate</button>
@@ -45,8 +45,17 @@
 
                 </div>
             </div>
-            <h1>Intrinsic value</h1>
-            <h1 id="intrinsicVal"></h1>
+            <div class="valuation">
+                <div class="intrinsicV">
+                    <h1>Intrinsic value</h1>
+                    <h1 id="intrinsicVal"></h1>
+                </div>
+                <div class="marketC">
+                    <h1>Market Cap</h1>
+                    <h1 id="marketCap"></h1>
+                </div>
+            </div>
+            
         </div>
     </div>
     <script src="main.js"></script>
