@@ -1,24 +1,18 @@
-// Inputs
-let cashFlow = document.getElementById('cashFlow');
-let shortTerm = document.getElementById('shortTerm').value;
-let discountRate = document.getElementById('discountRate').value/100; //To decimals
-let discountRateGroth = discountRate+1;
-let growthRate = document.getElementById('growthRate').value/100+1; //To decimals
-let perpetuity = document.getElementById('perpetuity').value/100;
-// let WACC = 0.0847; //Optional terminal value https://www.youtube.com/watch?v=77ivvN2Uk28
 
-console.log('perpetuity '+perpetuity);
 
-console.log(growthRate);
 
-console.log(discountRate);
-
-// Output
-let intrinsicValue = document.getElementById('intrinsicVal');
-let marketCap = document.getElementById('marketCap');
 
 // Calculation when button pressed
 function refresh(){
+
+    // Inputs
+    let cashFlow = document.getElementById('cashFlow');
+    let shortTerm = document.getElementById('shortTerm').value;
+    let discountRate = document.getElementById('discountRate').value/100; //To decimals
+    let discountRateGroth = discountRate+1;
+    let growthRate = document.getElementById('growthRate').value/100+1; //To decimals
+    let perpetuity = document.getElementById('perpetuity').value/100;
+
     let cash=cashFlow.value;
     let total=0; // Total cashflows
     let oneYear=0; //One year cashflows
@@ -28,6 +22,10 @@ function refresh(){
     let DF=[];
     let DFvalue=1;
     let DFCF=[];
+
+    // Output
+    let intrinsicValue = document.getElementById('intrinsicVal');
+    let marketCap = document.getElementById('marketCap');
 
     for(var i=1;i<=shortTerm;i++){
         oneYear=cash/Math.pow((1+discountRate),i);
@@ -65,12 +63,26 @@ function refresh(){
 }
 
 function createTable(dataFCF,dataDF,dataDFCF,total,terminal){
+
+
+    let data=document.getElementsByClassName('data')[0];
+
+    // Clear table
+    if(data.childElementCount!=0){
+        for(var i=0;i<=44;i++){
+            if(data.childElementCount==0){
+                break;
+            }
+            data.removeChild(data.childNodes[0]);
+        }
+    }
+        
     // Create years
     for(var i=1;i<=10;i++){
         var block= document.createElement('div');
         block.className='block';
         block.innerHTML=i;
-        document.getElementsByClassName('data')[0].appendChild(block);
+        data.appendChild(block);
     }
 
     // Create FCF
@@ -78,7 +90,7 @@ function createTable(dataFCF,dataDF,dataDFCF,total,terminal){
         var block= document.createElement('div');
         block.className='block';
         block.innerHTML=dataFCF[i-1];
-        document.getElementsByClassName('data')[0].appendChild(block);
+        data.appendChild(block);
     }
 
     // Create DF
@@ -86,7 +98,7 @@ function createTable(dataFCF,dataDF,dataDFCF,total,terminal){
         var block= document.createElement('div');
         block.className='block';
         block.innerHTML=dataDF[i-1];
-        document.getElementsByClassName('data')[0].appendChild(block);
+        data.appendChild(block);
     }
 
     // Create DFCF
@@ -94,15 +106,17 @@ function createTable(dataFCF,dataDF,dataDFCF,total,terminal){
         var block= document.createElement('div');
         block.className='block';
         block.innerHTML=dataDFCF[i-1];
-        document.getElementsByClassName('data')[0].appendChild(block);
+        data.appendChild(block);
     }
 
     // Create Sum of DFCF and Terminal
     for(var i=0;i<4;i++){
         var sumOfDFCF = document.createElement('div');
         sumOfDFCF.className = 'blockSum';
-        document.getElementsByClassName('results')[0].appendChild(sumOfDFCF);
+        data.appendChild(sumOfDFCF);
     }
+    
+    
 
 }
 
