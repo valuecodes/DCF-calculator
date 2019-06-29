@@ -9,7 +9,7 @@ function refresh(){
     let cashFlow = document.getElementById('cashFlow');
     let shortTerm = document.getElementById('shortTerm').value;
     let discountRate = document.getElementById('discountRate').value/100; //To decimals
-    let discountRateGroth = discountRate+1;
+    let discountRateGrowth = discountRate+1;
     let growthRate = document.getElementById('growthRate').value/100+1; //To decimals
     let perpetuity = document.getElementById('perpetuity').value/100;
 
@@ -31,7 +31,7 @@ function refresh(){
         oneYear=cash/Math.pow((1+discountRate),i);
         cash=cash*growthRate;
         FCF.push(Math.round(cash*100)/100);
-        DFvalue=DFvalue*discountRateGroth;
+        DFvalue=DFvalue*discountRateGrowth;
         DF.push((Math.round(DFvalue*100)/100));
         console.log('cash'+cash);
         oneYear*=growthRate;
@@ -44,7 +44,9 @@ function refresh(){
 
     // Perpetuity cashflows after 10 year
     // let terminal=oneYear*(1+perpetuity)/(WACC-perpetuity); //Optional terminal value
-    let terminal=oneYear*(1+perpetuity)/(discountRate-perpetuity);
+    let terminal=(oneYear*growthRate)*(1+perpetuity)/((discountRate+(0.01-(perpetuity/10)))-perpetuity);
+    console.log(growthRate);
+    console.log('total '+total);
     console.log('terminal '+terminal);
     total+=terminal;
     total=Math.round(total * 100) / 100;

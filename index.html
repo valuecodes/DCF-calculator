@@ -15,7 +15,8 @@
     <div class="container">
         <div class="inputFields">
             <h1>Free cash Flow (5 year average)</h1>
-            <input type="text" id="cashFlow" value="56">
+            <input type="text" id="cashFlow" value="56.97">
+            <button id="addCashManually">Calculate average</button>
             <h1>Cash flow growth rate</h1>
             <input type="text" id="growthRate" value="5">
             <h1>What do you consider short term (most common is 10 years)?</h1>
@@ -27,7 +28,7 @@
             <h1>Shares outstanding</h1>
             <input type="text" id="shareCount" value="4.74">
             <h1>Stock price</h1>
-            <input type="text" id="stockPrice" value="197.94">
+            <input type="text" id="stockPrice" value="197">
         </div>
         <div class="output">
             <button id="calculate" onclick="refresh()"> Calculate</button>
@@ -55,7 +56,8 @@
                     <h1 id="marketCap"></h1>
                 </div>
             </div>
-            
+
+
         </div>
     </div>
     <script src="main.js"></script>
