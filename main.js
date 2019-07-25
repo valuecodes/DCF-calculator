@@ -12,10 +12,12 @@ function refresh(){
     let discountRateGrowth = discountRate+1;
     let growthRate = document.getElementById('growthRate').value/100+1; //To decimals
     let perpetuity = document.getElementById('perpetuity').value/100;
+    let annual = document.getElementById('annual');
 
     let cash=cashFlow.value;
     let total=0; // Total cashflows
     let oneYear=0; //One year cashflows
+    let annualReturn;
     
     // Data for the table 
     let FCF=[];//Freecash flows
@@ -61,6 +63,11 @@ function refresh(){
     // Valuation
     intrinsicValue.innerHTML=total+' B';
     marketCap.innerHTML=marketC+' B';
+
+    // Annual return
+    annualReturn = (total/10)/marketC;
+    annualReturn=(annualReturn*100).toFixed(2);
+    annual.innerHTML=annualReturn+'%';
     
 }
 

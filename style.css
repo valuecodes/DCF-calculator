@@ -84,7 +84,7 @@ body{
 
 .valuation{
     margin: auto;
-    height: 200px;
+    height: 100px;
     width: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
