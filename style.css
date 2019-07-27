@@ -44,6 +44,25 @@ body{
     font-size: 25px;
 }
 
+/* Total */
+.total{
+    margin-left:auto; margin-right:0;
+    height: 23x;
+    width: 315px;
+    background-color: azure;
+    display: grid;
+    grid-template-columns: 189px 1fr;
+    border-left: 1px solid black;
+}
+
+.total h3{
+    margin: 0px;
+    text-align: left;
+    padding-left: 15px;
+    display: grid;
+    border: 1px solid black;
+    height: 100%;
+}
 
 /* Table */
 #table{
@@ -84,6 +103,7 @@ body{
 
 .valuation{
     margin: auto;
+    margin-top:50px; 
     height: 100px;
     width: 500px;
     display: grid;

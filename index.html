@@ -28,8 +28,9 @@
             <h1>Shares outstanding</h1>
             <input type="text" id="shareCount" value="4.74">
             <h1>Stock price</h1>
-            <input type="text" id="stockPrice" value="197">
+            <input type="text" id="sharePrice" value="197">
         </div>
+        
         <div class="output">
             <button id="calculate" onclick="refresh()"> Calculate</button>
             <div id="table">
@@ -42,9 +43,17 @@
                 <div class="data">
 
                 </div>
+                
                 <div class="results">
 
                 </div>
+                <div class="total">
+                    <h3>Sum of DFCF</h3>
+                    <h3 id="DFCF"></h3>
+                    <h3>Perpetuity cash flow</h1>
+                    <h3 id="DPCF"></h3>
+                </div>
+            
             </div>
             <div class="valuation">
                 <div class="intrinsicV">
